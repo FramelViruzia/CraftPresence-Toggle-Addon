@@ -11,6 +11,7 @@ base {
 
 repositories {
     mavenCentral()
+    maven { name = 'TerraformersMC'; url = 'https://maven.terraformersmc.com/releases' }
     exclusiveContent {
         forRepository {
             maven { name = 'Modrinth'; url = 'https://api.modrinth.com/maven' }
@@ -34,9 +35,11 @@ dependencies {
 
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    // Compiled against only, never bundled: players get these from CraftPresence's own download
+    // Compiled against only, never bundled: players install these themselves
     modCompileOnly "maven.modrinth:craftpresence:${project.craftpresence_version}"
-    modCompileOnly "maven.modrinth:unilib:${project.unilib_version}"
+    // Both optional at runtime: the classes using them are only loaded when the mod is present
+    modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+    modCompileOnly fabricApi.module('fabric-command-api-v2', project.fabric_api_version)
 }
 
 processResources {

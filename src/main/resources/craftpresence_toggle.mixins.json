@@ -4,8 +4,7 @@
   "package": "dev.craftpresencetoggle.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "DiscordUtilsMixin",
-    "GeneralSettingsGuiMixin"
+    "DiscordUtilsMixin"
   ],
   "injectors": {
     "defaultRequire": 1

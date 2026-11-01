@@ -21,7 +21,7 @@ public final class ToggleConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final Path FILE = FabricLoader.getInstance().getConfigDir().resolve("craftpresence-toggle.json");
 
-    // Read every tick on the client thread, written from the settings screen
+    // Read every tick on the client thread, written from the Mod Menu screen or /cptoggle
     private static volatile boolean enabled = load();
 
     private ToggleConfig() {

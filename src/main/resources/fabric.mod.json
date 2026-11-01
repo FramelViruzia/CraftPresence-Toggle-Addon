@@ -3,12 +3,21 @@
   "id": "craftpresence_toggle",
   "version": "${version}",
   "name": "CraftPresence Toggle Addon",
-  "description": "Adds a simple on/off button to CraftPresence's General Settings to toggle its Discord status.",
+  "description": "This mod adds a simple on/off button for CraftPresence's Discord status in Mod Menu.",
   "authors": [
     "ViruziA"
   ],
   "license": "MIT",
+  "icon": "assets/craftpresence_toggle/icon.png",
   "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.craftpresencetoggle.CraftPresenceToggle"
+    ],
+    "modmenu": [
+      "dev.craftpresencetoggle.ModMenuIntegration"
+    ]
+  },
   "mixins": [
     "craftpresence_toggle.mixins.json"
   ],
@@ -16,7 +25,10 @@
     "fabricloader": ">=0.15.0",
     "minecraft": "~1.21.1",
     "craftpresence": ">=2.7.0",
-    "unilib": ">=1.2.0",
     "java": ">=21"
+  },
+  "suggests": {
+    "modmenu": "*",
+    "fabric-api": "*"
   }
 }
