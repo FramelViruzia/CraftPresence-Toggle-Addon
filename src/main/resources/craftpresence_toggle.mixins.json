@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.craftpresencetoggle.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "DiscordUtilsMixin",
+    "GeneralSettingsGuiMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
